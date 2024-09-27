@@ -11,9 +11,13 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.example.tatil.Classes.City;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class StartingActivity extends AppCompatActivity {
 
@@ -21,6 +25,7 @@ public class StartingActivity extends AppCompatActivity {
     private LinearLayout linearLayout;
     private Button register;
     private Button login;
+    private DatabaseReference mDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,10 +62,8 @@ public class StartingActivity extends AppCompatActivity {
         });
 
         // Write a message to the database
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("message");
 
-        myRef.setValue("Hello, World!");
+
     }
 
     private class MyAnimationListener implements Animation.AnimationListener{

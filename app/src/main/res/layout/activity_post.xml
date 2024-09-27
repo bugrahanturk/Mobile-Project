@@ -36,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:text="Post"
                 android:id="@+id/post"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="15dp"
@@ -72,6 +72,16 @@
             android:id="@+id/description"
             app:socialFlags="hashtag|mention"
             app:hashtagColor="@color/colorPrimary"/>
+
+    <com.hendraanggrian.appcompat.widget.SocialAutoCompleteTextView
+        android:id="@+id/location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:hint="Location"
+        android:maxLines="5"
+        app:hashtagColor="@color/colorPrimary"
+        app:socialFlags="hashtag|mention" />
 
 
 </LinearLayout>

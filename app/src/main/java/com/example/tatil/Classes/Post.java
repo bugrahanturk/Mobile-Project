@@ -4,17 +4,19 @@ public class Post {
 
     private String description;
     private String imageUrl;
+    private   String location;
     private String postId;
     private String publisher;
 
     public Post() {
     }
 
-    public Post(String description, String imageurl, String postid, String publisher) {
+    public Post(String description, String imageurl, String postid, String publisher,String location) {
         this.description = description;
         this.imageUrl = imageurl;
         this.postId = postId;
         this.publisher = publisher;
+        this.location = location;
     }
 
     public String getDescription() {
@@ -31,6 +33,14 @@ public class Post {
 
     public void setImageurl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     public String getPostid() {

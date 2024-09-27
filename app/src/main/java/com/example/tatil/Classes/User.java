@@ -5,20 +5,30 @@ public class User {
     private String name;
     private String email;
     private String username;
-    private String bio;
+    private String adress;
     private String imageurl;
     private String id;
+    private String mentor;
 
     public User() {
     }
 
-    public User(String name, String email, String username, String bio, String imageurl, String id) {
+    public User(String name, String email, String username, String adress, String imageurl, String id,String mentor) {
         this.name = name;
         this.email = email;
         this.username = username;
-        this.bio = bio;
+        this.adress = adress;
         this.imageurl = imageurl;
         this.id = id;
+        this.mentor = mentor;
+    }
+
+    public String getMentor() {
+        return mentor;
+    }
+
+    public void setMentor(String mentor) {
+        this.mentor = mentor;
     }
 
     public String getName() {
@@ -45,12 +55,12 @@ public class User {
         this.username = username;
     }
 
-    public String getBio() {
-        return bio;
+    public String getAdress() {
+        return adress;
     }
 
-    public void setBio(String bio) {
-        this.bio = bio;
+    public void setAdress(String adress) {
+        this.adress = adress;
     }
 
     public String getImageurl() {

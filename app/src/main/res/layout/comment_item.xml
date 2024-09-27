@@ -18,6 +18,7 @@
             android:layout_marginStart="5dp"
             android:layout_toEndOf="@+id/image_profile"
             android:layout_marginLeft="5dp"
+            android:id="@+id/linear"
             android:layout_toRightOf="@+id/image_profile">
 
             <TextView
@@ -34,5 +35,12 @@
                 android:text="This is a comment"
                 android:maxLines="5"/>
         </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#c0c0c0"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/linear"/>
 
 </RelativeLayout>

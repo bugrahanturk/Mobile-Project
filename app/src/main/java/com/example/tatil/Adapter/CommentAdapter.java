@@ -1,6 +1,7 @@
 package com.example.tatil.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.tatil.Classes.Comment;
 import com.example.tatil.Classes.User;
+import com.example.tatil.Fragments.ProfileFragment;
+import com.example.tatil.MainActivity;
+import com.example.tatil.ProfileActivity;
 import com.example.tatil.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -73,6 +77,24 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.ViewHold
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
+            }
+        });
+
+        holder.comment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, ProfileActivity.class);
+                intent.putExtra("publisherId",comment.getPublisher());
+                mContext.startActivity(intent);
+            }
+        });
+
+        holder.imageProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, ProfileActivity.class);
+                intent.putExtra("publisherId",comment.getPublisher());
+                mContext.startActivity(intent);
             }
         });
 

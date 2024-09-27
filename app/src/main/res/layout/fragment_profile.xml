@@ -1,14 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".Fragments.ProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/windowBackground">
+
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/profile_photo"
+                    android:layout_width="163dp"
+                    android:layout_height="165dp"
+                    android:layout_centerHorizontal="true"
+
+                    android:layout_marginTop="10dp" />
+
+                <ImageView
+                    android:id="@+id/verifed_user"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_above="@+id/username"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_toRightOf="@+id/profile_photo"
+                    android:src="@drawable/ic_verified" />
+
+                <TextView
+                    android:id="@+id/username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/profile_photo"
+                    android:layout_centerHorizontal="true"
+                    android:text="username"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/options"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginRight="15dp"
+                    android:src="@drawable/ic_menu" />
+
+                <TextView
+                    android:id="@+id/adress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/username"
+                    android:layout_centerHorizontal="true"
+                    android:text="Istanbul/Pendik"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/email_profile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/adress"
+                    android:layout_centerHorizontal="true"
+                    android:text="Istanbul/Pendik" />
+
+
+            </RelativeLayout>
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+           android:background="#ff385c"
+            android:text="Posts"
+            android:paddingLeft="15dp"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:textColor="#38ffdb"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Profile Fragmennt" />
+        android:layout_below="@+id/bar">
 
-</FrameLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:background="#FBFAF8"
+            android:id="@+id/recyler_view_posts"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -6,13 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".StartingActivity">
 
-   <ImageView
-       android:layout_width="100dp"
-       android:layout_height="100dp"
-       android:src="@drawable/c11e79e55a3a849888574a52e78f5855"
-       android:id="@+id/icon_image"
-       android:layout_centerInParent="true"
-       android:visibility="visible"/>
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/c11e79e55a3a849888574a52e78f5855"
+        android:id="@+id/icon_image"
+        android:layout_centerInParent="true"
+        android:visibility="visible"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -22,19 +22,21 @@
         android:padding="10dp"
         android:id="@+id/linear_layout">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:src="@drawable/c11e79e55a3a849888574a52e78f5855"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/c11e79e55a3a849888574a52e78f5855"/>
 
         <Button
             android:id="@+id/login"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@drawable/button_background"
+            android:layout_height="40dp"
+            android:background="@drawable/rounded_fg"
             android:text="Log In"
+            android:layout_marginBottom="15dp"
             android:textAllCaps="false"
-            app:backgroundTint="@color/colorAccent" />
+            app:backgroundTint="#38acff" />
 
         <Space
             android:layout_width="2dp"
@@ -43,11 +45,11 @@
         <Button
             android:id="@+id/register"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@drawable/button_background"
+            android:layout_height="40dp"
+            android:background="@drawable/rounded_fg"
             android:text="Register"
             android:textAllCaps="false"
-            app:backgroundTint="@color/colorAccent" />
+            app:backgroundTint="#38acff" />
 
         
     </LinearLayout>

@@ -15,16 +15,20 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="#EC7063"
+
+        android:backgroundTint="#EC7063"
+        android:outlineSpotShadowColor="#EC7063"
         android:id="@+id/bottom"
         android:layout_alignParentBottom="true">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:itemRippleColor="#CDDC39"
             android:id="@+id/bottom_navigation"
-            app:itemIconTint="@color/selector"
-            app:labelVisibilityMode="unlabeled"
-            android:background="?android:attr/windowBackground"
+             app:labelVisibilityMode="unlabeled"
+            android:background="#ff385c"
             app:menu="@menu/bottom_menu"/>
 
     </com.google.android.material.appbar.AppBarLayout>

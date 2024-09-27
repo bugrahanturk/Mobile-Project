@@ -65,6 +65,23 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        FirebaseDatabase.getInstance().getReference().child("Posts").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                postList.clear();
+                for (DataSnapshot datasnapshot: snapshot.getChildren()) {
+                    Post post = datasnapshot.getValue(Post.class);
+                    postList.add(post);
+                }
+                postAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
         return view;
     }
 

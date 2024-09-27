@@ -6,9 +6,20 @@
     tools:context=".Fragments.LocationsFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <fragment
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Locations Fragment" />
+        android:id="@+id/googleMap"
+        android:name="com.google.android.gms.maps.SupportMapFragment"/>
+    <SearchView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sv_location"
+        android:queryHint="Search..."
+        android:iconifiedByDefault="false"
+        android:layout_margin="10dp"
+        android:elevation="5dp"
+        android:background="@drawable/bg_round"/>
+
 
 </FrameLayout>

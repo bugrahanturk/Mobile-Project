@@ -4,26 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FBFAF8"
+
     tools:context=".CommentActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#FBFAF8"
+
         android:id="@+id/toolbar"
-        android:background="?android:attr/windowBackground"/>
+        />
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/recyler_view"
         android:layout_below="@+id/toolbar"
+        android:background="#FBFAF8"
+
         android:layout_above="@+id/bottom"/>
 
     <RelativeLayout
         android:id="@+id/bottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#ffffff"
+        android:background="#FBFAF8"
         android:layout_alignParentBottom="true"
         android:padding="5dp">
 

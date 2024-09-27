@@ -10,55 +10,76 @@
     tools:context=".RegisterActivity">
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_width="350dp"
+        android:layout_height="250dp"
         android:src="@drawable/c11e79e55a3a849888574a52e78f5855"/>
 
     <EditText
+        android:id="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/edit_text_background"
         android:layout_marginTop="15dp"
+        android:layout_marginHorizontal="10dp"
+        android:background="#FFF2D8"
         android:hint="Username"
-        android:padding="10dp"
-        android:id="@+id/username"/>
+        android:padding="10dp" />
 
     <EditText
+        android:id="@+id/name"
+        android:layout_marginHorizontal="10dp"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/edit_text_background"
         android:layout_marginTop="15dp"
+        android:background="#FFF2D8"
         android:hint="Name"
-        android:padding="10dp"
-        android:id="@+id/name"/>
+        android:padding="10dp" />
 
     <EditText
+        android:id="@+id/email"
+        android:layout_marginHorizontal="10dp"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/edit_text_background"
         android:layout_marginTop="15dp"
+        android:background="#FFF2D8"
         android:hint="Email"
-        android:padding="10dp"
-        android:id="@+id/email"/>
+        android:padding="10dp" />
 
     <EditText
         android:id="@+id/password"
-        android:background="@drawable/edit_text_background"
+        android:layout_marginHorizontal="10dp"
+
         android:layout_width="match_parent"
-        android:layout_marginTop="15dp"
         android:layout_height="wrap_content"
-        android:padding="10dp"
+        android:layout_marginTop="15dp"
+        android:background="#FFF2D8"
+        android:hint="Password"
         android:inputType="textPassword"
-        android:hint="Password"/>
+        android:padding="10dp" />
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/location"
+        android:layout_marginHorizontal="10dp"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="#FFF2D8"
+        android:dropDownSelector="#FFF2D8"
+        android:hint="Adress" />
 
     <Button
         android:id="@+id/register"
+        android:layout_marginHorizontal="10dp"
+        android:background="@drawable/rounded_fg"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:padding="10dp"
         android:text="REGISTER"
-        app:backgroundTint="@color/colorAccent" />
+        app:backgroundTint="#38acff" />
 
     <TextView
         android:layout_width="wrap_content"

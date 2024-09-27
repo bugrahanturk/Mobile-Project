@@ -43,6 +43,7 @@ public class PostActivity extends AppCompatActivity {
     private ImageView img_added;
     private TextView post;
     SocialAutoCompleteTextView description;
+    SocialAutoCompleteTextView location;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +54,7 @@ public class PostActivity extends AppCompatActivity {
         img_added = findViewById(R.id.img_added);
         post = findViewById(R.id.post);
         description = findViewById(R.id.description);
+        location = findViewById(R.id.location);
 
         close.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,6 +106,7 @@ public class PostActivity extends AppCompatActivity {
                     map.put("postid",postId);
                     map.put("imageurl",imageUrl);
                     map.put("description",description.getText().toString());
+                    map.put("location",location.getText().toString());
                     map.put("publisher", FirebaseAuth.getInstance().getCurrentUser().getUid());
 
                     ref.child(postId).setValue(map);

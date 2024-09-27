@@ -14,7 +14,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.tatil.Classes.Post;
 import com.example.tatil.Classes.User;
 import com.example.tatil.CommentActivity;
+import com.example.tatil.MapActivity;
+import com.example.tatil.ProfileActivity;
 import com.example.tatil.R;
+import com.google.android.gms.common.util.JsonUtils;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -58,7 +61,6 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 User user = snapshot.getValue(User.class);
-
                 if (user.getImageurl().equals("default")){
                     holder.imageProfile.setImageResource(R.mipmap.ic_launcher);
                 }else{
@@ -70,6 +72,15 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
+            }
+        });
+
+        holder.imageProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, ProfileActivity.class);
+                intent.putExtra("publisherId",post.getPublisher());
+                mContext.startActivity(intent);
             }
         });
 
@@ -109,6 +120,28 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
                 mContext.startActivity(intent);
             }
         });
+        holder.goTo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseDatabase.getInstance().getReference().child("Users").child(firebaseUser.getUid()).addValueEventListener(new ValueEventListener() {
+
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        User user = snapshot.getValue(User.class);
+                        String adress = user.getAdress();
+                        System.out.println("Adressss"+adress);
+                        mContext.getSharedPreferences("LOCATION", mContext.MODE_PRIVATE).edit().putString("location", adress).apply();
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+                Intent intent = new Intent(mContext, MapActivity.class);
+                intent.putExtra("location",post.getLocation());
+                mContext.startActivity(intent); }
+        });
 
     }
 
@@ -118,7 +151,6 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-
 
         public ImageView imageProfile;
         public ImageView postImage;
@@ -141,8 +173,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
             postImage = itemView.findViewById(R.id.post_image);
             like = itemView.findViewById(R.id.like);
             comment = itemView.findViewById(R.id.comment);
-            save = itemView.findViewById(R.id.save);
-            more = itemView.findViewById(R.id.more);
+            //more = itemView.findViewById(R.id.more);
             goTo = itemView.findViewById(R.id.goTo);
 
             username = itemView.findViewById(R.id.username);

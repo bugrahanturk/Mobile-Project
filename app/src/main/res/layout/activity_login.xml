@@ -11,42 +11,45 @@
 
     <ImageView
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:src="@drawable/c11e79e55a3a849888574a52e78f5855"/>
+        android:layout_height="250dp"
+        android:src="@drawable/c11e79e55a3a849888574a52e78f5855" />
 
     <EditText
+        android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/edit_text_background"
         android:layout_marginTop="15dp"
+        android:background="#FFF2D8"
         android:hint="Email"
-        android:padding="10dp"
-        android:id="@+id/email"/>
+        android:padding="10dp" />
 
     <EditText
         android:id="@+id/password"
-        android:background="@drawable/edit_text_background"
         android:layout_width="match_parent"
-        android:layout_marginTop="15dp"
         android:layout_height="wrap_content"
-        android:padding="10dp"
+        android:layout_marginTop="15dp"
+        android:background="#FFF2D8"
+        android:hint="Password"
         android:inputType="textPassword"
-        android:hint="Password"/>
+        android:padding="10dp" />
 
     <Button
         android:id="@+id/login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
+        android:background="@drawable/rounded_fg"
         android:padding="10dp"
         android:text="LOGIN"
-        app:backgroundTint="@color/colorAccent" />
+        app:backgroundTint="#38acff"
+
+        />
 
     <TextView
+        android:id="@+id/register_user"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New to MyHolidayPlaces?"
         android:layout_marginTop="15dp"
-        android:id="@+id/register_user"/>
+        android:text="New to MyHolidayPlaces?" />
 
 </LinearLayout>
